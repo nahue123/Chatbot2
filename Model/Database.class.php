@@ -31,14 +31,6 @@ class Database{
         return $this->conexion;
 
     }
-
-    public function execute(){
-
-    }
-
-    public function query(){
-        
-    }
 }
 
 ?>

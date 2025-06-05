@@ -6,6 +6,7 @@ class Rol{
     private $nombre;
     private $conexion;
 
+    //Metodos
     public function __construct($id=null, $nombre=null){
         $this->id=$id;
         $this->nombre=$nombre;
@@ -13,6 +14,20 @@ class Rol{
 
     }
 
+    //Metodos ordenado alfabeticamente static
+    public static function obtenerPorId($id){
+        $conexion= Database::getInstance()->getConection();
+        $sql="SELECT * FROM roles WHERE id=?";
+        $stmt= $conexion->prepare($sql);
+        $stmt->execute ([$id]);
+        $resultados= $stmt->fetch(PDO: :FETCH_ASSOC);
+        if ($resultado){
+            return new Rol($resultado['id'], $resultado['nombre'])
+        }
+
+        return null;
+    }
+     
     public static function obtenerTodxs(){
         $conexion= Database::getInstance()->getConection();
         $sql="SELECT * FROM roles";
