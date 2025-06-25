@@ -4,7 +4,7 @@ class Database {
     private static $instancia = null;
 
     // Configuración de la base de datos
-    private $nombre = "chatbot_2.sql";
+    private $nombre = "chatbot_2";
     private $servidor = "localhost";
     private $usuario = "root";
     private $clave = "";
@@ -13,11 +13,9 @@ class Database {
     // Constructor privado para evitar múltiples instancias
     private function __construct() {
         try {
-            // ⚠️ ERROR CORREGIDO: $dns → $dsn y $thisl → $this
             $dsn = "mysql:host={$this->servidor};dbname={$this->nombre};charset=utf8";
             $this->conexion = new PDO($dsn, $this->usuario, $this->clave);
 
-            // ⚠️ ERROR CORREGIDO: serAttribute → setAttribute
             $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch (PDOException $e) {

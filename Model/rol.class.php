@@ -20,8 +20,7 @@ class Rol {
         $sql = "SELECT * FROM roles WHERE id = ?";
         $stmt = $conexion->prepare($sql);
         $stmt->execute([$id]);
-
-        // ⚠️ ERROR CORREGIDO: `$resultados` → `$resultado` y `PDO::FETCH_ASSOC` mal escrito
+        
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($resultado) {
             return new Rol($resultado['id'], $resultado['nombre']);

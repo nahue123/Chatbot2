@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="listarRol.css">
+
 <?php
 // Incluye la clase Rol para poder usar sus métodos
 require_once("./Model/rol.class.php");
@@ -30,10 +32,11 @@ $roles = Rol::obtenerTodxs(); // Método estático: se llama sin instanciar la c
             <td><?= $rol['nombre'] ?></td> <!-- Muestra el nombre del rol -->
             <td>
                 <!-- Botón para editar el rol (pasa el ID por la URL) -->
-                <a href="rol_editar.php?id=<?= $rol['id'] ?>">Editar</a>
+                <a href="formEditarRol.php?id=<?= $rol['id'] ?>">Editar</a>
 
                 <!-- Formulario para eliminar el rol (usa método POST) -->
-                <form action="../procesar/rol_eliminar.php" method="POST" style="display:inline;">
+                <form action="./Controller/rol.controller.php" method="POST" style="display:inline;">
+                    <input type="hidden" name="operacion" value="eliminar" />
                     <!-- Campo oculto que lleva el ID del rol a eliminar -->
                     <input type="hidden" name="id" value="<?= $rol['id'] ?>">
                     <!-- Botón de eliminar con confirmación -->

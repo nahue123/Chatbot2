@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="FormAltaRol.css" />
+
 <!-- Formulario para crear un nuevo rol -->
 <form name="formAltaRol" action="./Controller/rol.controller.php" method="POST">
     
