@@ -4,7 +4,7 @@ class Database {
     private static $instancia = null;
 
     // Configuración de la base de datos
-    private $nombre = "chatbot_2";
+    private $nombre = "chatbot2";
     private $servidor = "localhost";
     private $usuario = "root";
     private $clave = "";
