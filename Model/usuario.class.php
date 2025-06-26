@@ -62,7 +62,12 @@ class Usuario{
     public function guardar() {
         $sql = "INSERT INTO usuarios (nombre, email, password, rol_id) VALUES (?, ?, ?, ?)";
         $stmt = $this->conexion->prepare($sql);
-        return $stmt->execute([$this->nombre, $this->email, password_hash($this->password, PASSWORD_DEFAULT), $this->rol]);
+        return $stmt->execute([
+            $this->nombre, 
+            $this->email, 
+            $this->password,
+            $this->rol
+        ]);
     }
     public function eliminar() {
     $sql = "DELETE FROM usuarios WHERE id = ?";

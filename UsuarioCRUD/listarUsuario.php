@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="listarUsuario.css">
 <?php
 require_once("../Model/usuario.class.php");
 $usuarios = Usuario::obtenerTodos();

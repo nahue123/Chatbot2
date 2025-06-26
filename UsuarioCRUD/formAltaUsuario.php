@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="formAltaUsuario.css">
 <?php
 include_once '../Model/rol.class.php';
 $roles = Rol::obtenerTodxs();

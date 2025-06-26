@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="formEditarUsuario.css">
 <?php
 include "../Model/usuario.class.php";
 
@@ -5,7 +6,7 @@ include "../Model/usuario.class.php";
 if(isset($_GET["id"])){
     $usuario = Usuario::obtenerPorId($_GET["id"]);
 ?>
-    <h2>Editar Rol</h2>
+    <h2 class="TituloEditar">Editar Rol</h2>
     <form name="formEditarUsuario" action="../Controller/usuario.controller.php" method="POST">
         <input type="hidden" name="operacion" value="actualizar" />
         <label> Id </label>
