@@ -1,20 +1,17 @@
 <?php
-include "database.class.php"; // Incluye la clase de conexión a la base de datos
+include "database.class.php";
 
 class Rol {
-    // Atributos privados
     private $id;
     private $nombre;
     private $conexion;
 
-    // Constructor: inicializa atributos y la conexión a la base de datos
     public function __construct($id = null, $nombre = null) {
         $this->id = $id;
         $this->nombre = $nombre;
-        $this->conexion = Database::getInstance()->getConection(); // conexión PDO
+        $this->conexion = Database::getInstance()->getConection(); 
     }
 
-    // Método estático: obtiene un rol por su ID
     public static function obtenerPorId($id) {
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM roles WHERE id = ?";
@@ -26,32 +23,28 @@ class Rol {
             return new Rol($resultado['id'], $resultado['nombre']);
         }
 
-        return null; // Si no se encuentra, retorna null
+        return null; 
     }
 
-    // Método estático: obtiene todos los roles
     public static function obtenerTodxs() {
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM roles";
         $stmt = $conexion->query($sql);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Devuelve todos los registros como array asociativo
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); 
     }
 
-    // Guarda un nuevo rol (INSERT)
     public function guardar() {
         $sql = "INSERT INTO roles (nombre) VALUES (?)";
         $stmt = $this->conexion->prepare($sql);
         return $stmt->execute([$this->nombre]);
     }
 
-    // Actualiza un rol existente (UPDATE)
     public function actualizar() {
         $sql = "UPDATE roles SET nombre = ? WHERE id = ?";
         $stmt = $this->conexion->prepare($sql);
         return $stmt->execute([$this->nombre, $this->id]);
     }
 
-    // Elimina un rol por su ID (DELETE)
     public function eliminar() {
         $sql = "DELETE FROM roles WHERE id = ?";
         $stmt = $this->conexion->prepare($sql);

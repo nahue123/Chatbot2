@@ -3,14 +3,12 @@
 class Database {
     private static $instancia = null;
 
-    // Configuración de la base de datos
-    private $nombre = "chatbot2";
+    private $nombre = "chatbot_2";
     private $servidor = "localhost";
     private $usuario = "root";
     private $clave = "";
     private $conexion;
 
-    // Constructor privado para evitar múltiples instancias
     private function __construct() {
         try {
             $dsn = "mysql:host={$this->servidor};dbname={$this->nombre};charset=utf8";
@@ -23,7 +21,6 @@ class Database {
         }
     }
 
-    // Método estático para obtener la única instancia de la clase
     public static function getInstance() {
         if (!self::$instancia) {
             self::$instancia = new Database();
@@ -32,7 +29,6 @@ class Database {
         return self::$instancia;
     }
 
-    // Devuelve el objeto de conexión PDO
     public function getConection() {
         return $this->conexion;
     }

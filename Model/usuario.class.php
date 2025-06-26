@@ -17,7 +17,6 @@ class Usuario{
         $this->rol = $rol_id;
         $this->conexion = Database::getInstance()->getConection(); // Conexión PDO
     }
-
     public static function obtenerPorId($id) {
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM usuarios WHERE id = ?";
@@ -31,19 +30,17 @@ class Usuario{
                 $resultado['nombre'], 
                 $resultado['email'], 
                 $resultado['password'], 
-                $resultado['rol']
+                $resultado['rol_id']
             ); 
         }
         return null;
     }
-
     public static function obtenerTodos() {
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM usuarios";
         $stmt = $conexion->query($sql);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Devuelve todos los usuarios como array asociativo
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
     public static function obtenerPorEmail($email) {
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM usuarios WHERE email = ?";
@@ -57,32 +54,44 @@ class Usuario{
                 $resultado['nombre'], 
                 $resultado['email'], 
                 $resultado['password'], 
-                $resultado['rol']
+                $resultado['rol_id']
             );
         }
-        return null; // Si no se encuentra, retorna null
+        return null; 
     }
-
-    // Guarda un nuevo usuario (INSERT)
     public function guardar() {
-        $sql = "INSERT INTO usuarios (nombre, email, password, rol) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO usuarios (nombre, email, password, rol_id) VALUES (?, ?, ?, ?)";
         $stmt = $this->conexion->prepare($sql);
         return $stmt->execute([$this->nombre, $this->email, password_hash($this->password, PASSWORD_DEFAULT), $this->rol]);
     }
-
-    // Verifica si las credenciales de login son correctas
+    public function eliminar() {
+    $sql = "DELETE FROM usuarios WHERE id = ?";
+    $stmt = $this->conexion->prepare($sql);
+    return $stmt->execute([$this->id]);
+    }
+    public function actualizar() {
+        $sql = "UPDATE usuarios SET nombre = ?, email = ?, password = ?, rol_id = ? WHERE id = ?";
+        $stmt = $this->conexion->prepare($sql);
+        $passwordHash = password_hash($this->password, PASSWORD_DEFAULT);
+        return $stmt->execute([
+            $this->nombre,
+            $this->email,
+            $passwordHash,
+            $this->rol,
+            $this->id
+        ]);
+    }
     public static function verificarLogin($email, $password) {
         $usuario = self::obtenerPorEmail($email);
         if ($usuario) {
-            // Verifica la contraseña usando password_verify
             if (password_verify($password, $usuario->password)) {
-                return $usuario; // Retorna el objeto de usuario si las credenciales son correctas
+                return $usuario; 
             }
         }
-        return null; // Si las credenciales son incorrectas, retorna null
+        return null; 
     }
-     // Getters
-     public function getId() {
+    // Getters
+    public function getId() {
         return $this->id;
     }
     public function getNombre(){
@@ -92,14 +101,12 @@ class Usuario{
         return $this->email;
     }
     public function getPassword(){
-        return $this->nombre;
+        return $this->password;
     }
     public function getRol_Id(){
-        return $this->nombre;
+     return $this->rol;
     }
-
-// Getters
-
+    // Setters
     public function setId($id){
         $this->id = $id;
     }
@@ -110,10 +117,10 @@ class Usuario{
         $this->email = $email;
     }
     public function setPassword($password){
-        $this->password = $password;
+    $this->password = $password;
     }
     public function setRol_Id($rol_Id){
-        $this->rol_id = $rol_Id;
+        $this->rol = $rol_Id;
     }
 }
 ?>

@@ -1,84 +1,79 @@
-/* Estilos generales para cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 20px;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 20px;
+}
   
-  /* Contenedor del título */
-  h2 {
-    color: #333;
-    margin-bottom: 10px;
-  }
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
   
-  /* Botón de + Nuevo Rol */
-  a[href="formAltaRol.php"] {
-    display: inline-block;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 16px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
+a[href="formAltaRol.php"] {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
   
-  a[href="formAltaRol.php"]:hover {
-    background-color: #0056b3;
-  }
+a[href="formAltaRol.php"]:hover {
+  background-color: #0056b3;
+}
   
-  /* Tabla */
-  table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 12px;
-    overflow: hidden;
-  }
+table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
   
-  th, td {
-    padding: 12px 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
   
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
+th {
+  background-color: #4CAF50;
+  color: white;
+}
   
-  tr:hover {
-    background-color: #f1f1f1;
-  }
+tr:hover {
+  background-color: #f1f1f1;
+}
   
-  /* Botones de acción */
-  a[href*="formEditarRol.php"],
-  button[type="submit"] {
-    padding: 6px 12px;
-    margin: 0 3px;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-  }
+a[href*="formEditarRol.php"],
+button[type="submit"] {
+  padding: 6px 12px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
   
-  a[href*="formEditarRol.php"] {
-    background-color: #ffc107;
-    color: #333;
-  }
+a[href*="formEditarRol.php"] {
+  background-color: #ffc107;
+  color: #333;
+}
   
-  a[href*="formEditarRol.php"]:hover {
-    background-color: #e0a800;
-  }
+a[href*="formEditarRol.php"]:hover {
+  background-color: #e0a800;
+}
   
-  button[type="submit"] {
-    background-color: #dc3545;
-    color: white;
-  }
+button[type="submit"] {
+  background-color: #dc3545;
+  color: white;
+}
   
-  button[type="submit"]:hover {
-    background-color: #c82333;
-  }
+button[type="submit"]:hover {
+  background-color: #c82333;
+}
