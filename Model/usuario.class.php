@@ -70,9 +70,9 @@ class Usuario{
         ]);
     }
     public function eliminar() {
-    $sql = "DELETE FROM usuarios WHERE id = ?";
-    $stmt = $this->conexion->prepare($sql);
-    return $stmt->execute([$this->id]);
+        $sql = "DELETE FROM usuarios WHERE id = ?";
+        $stmt = $this->conexion->prepare($sql);
+        return $stmt->execute([$this->id]);
     }
     public function actualizar() {
         $sql = "UPDATE usuarios SET nombre = ?, email = ?, password = ?, rol_id = ? WHERE id = ?";

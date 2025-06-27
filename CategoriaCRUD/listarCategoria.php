@@ -1,8 +1,7 @@
-
 <?php
 require_once("../Model/categoria.class.php");
 
-$categorias = Categoria::obtenerTodxs();
+$categorias = Categoria::obtenerTodas();
 ?>
 <h2 style="text-align: center;">Listado de Categorías</h2>
 
