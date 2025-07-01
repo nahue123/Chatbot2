@@ -1,8 +1,8 @@
 <?php
 require_once("../Model/pregunta.class.php");
-$preguntas = Preguntas::obtenerTodos();
+$pregunta = Pregunta::obtenerTodos();
 ?>
-<h2 style="text-align: center;">Listado de Usuarios</h2>
+<h2 style="text-align: center;">Listado de Preguntas</h2>
 <div style="text-align: center; margin-bottom: 10px;">
     <a href="formAltaPreguntas.php"> + Nueva Pregunta </a>
 </div>
@@ -10,19 +10,20 @@ $preguntas = Preguntas::obtenerTodos();
     <tr>
         <th>ID</th>
         <th>Pregunta</th>
-        <th>Categoria</th>
+        <th>Categoría</th>
+        <th>Acciones</th>
     </tr>
-    <?php foreach ($preguntas as $pregunta): ?>
+    <?php foreach ($pregunta as $pregunta): ?>
         <tr>
-            <td><?= $usuario['id'] ?></td>
-            <td><?= $usuario['pregunta'] ?></td>
-            <td><?= $usuario['categoria_id'] ?></td>
+            <td><?= $pregunta['id'] ?></td> 
+            <td><?= $pregunta['pregunta'] ?></td> 
+            <td><?= $pregunta['categoria_id'] ?></td> 
             <td>
-                <a href="formEditarPregunta.php?id=<?= $pregunta['id'] ?>">Editar</a>
+                <a href="formEditarPreguntas.php?id=<?= $pregunta['id'] ?>">Editar</a>
                 <form action="../Controller/pregunta.controller.php" method="POST" style="display:inline;">
-                    <input type="hidden" name="operacion" value="eliminar"/>
+                    <input type="hidden" name="operacion" value="eliminar" />
                     <input type="hidden" name="id" value="<?= $pregunta['id'] ?>">
-                    <button type="submit" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</button>
+                    <button type="submit" onclick="return confirm('¿Seguro que querés eliminar esta pregunta?')">Eliminar</button>
                 </form>
             </td>
         </tr>

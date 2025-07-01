@@ -1,33 +1,40 @@
 <?php
 include "../Model/pregunta.class.php";
-$operacion = $_POST["operacion"];
 
-if (isset($operacion)) {
+if (isset($_POST['operacion'])) {
+    $operacion = $_POST['operacion'];
     $result = false;
+
     if ($operacion == "guardar") {
         $pregunta = new Pregunta(
-            null, 
+            null,
             $_POST['pregunta'],
             $_POST['categoria_id']
         );
         $result = $pregunta->guardar();
+
     } else if ($operacion == "actualizar") {
         $pregunta = new Pregunta(
             $_POST['id'],
             $_POST['pregunta'],
             $_POST['categoria_id']
-        ); 
+        );
         $result = $pregunta->actualizar();
+
     } else if ($operacion == "eliminar") {
-        $pregunta = new Pregunta($_POST['id'], null);
+        $pregunta = new Pregunta($_POST['id']);
         $result = $pregunta->eliminar();
     }
+    
     if ($result) {
-        print "<br>La operación se ejecutó con éxito.";
+        echo "<br>La operación se ejecutó con éxito.";
     } else {
-        print "<br>La operación no se ejecutó con éxito.";
+        echo "<br>La operación no se ejecutó con éxito.";
     }
+    echo "<br><a href='../PreguntasCRUD/listarpreguntas.php'>Volver al listado</a>";
+
 } else {
-    print "<a href='../listarCategoria.php'>Volver</a>";
+    echo "<br>No se recibió ninguna operación.";
+    echo "<br><a href='../PreguntasCRUD/listarpreguntas.php'>Volver al listado</a>";
 }
 ?>
