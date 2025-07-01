@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="listarCategoria.css">
 <?php
 require_once("../Model/categoria.class.php");
 

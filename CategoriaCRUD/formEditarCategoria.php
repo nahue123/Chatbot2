@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="formEditarRol.css">
+<link rel="stylesheet" href="formEditarCategoria.css">
 <?php
 include "../Model/categoria.class.php";
 if(isset($_GET["id"])){

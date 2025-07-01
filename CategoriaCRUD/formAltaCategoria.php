@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="formAltaCategoria.css">
+
 <form name="formAltaCategoria" action="../Controller/categoria.controller.php" method="POST">
     <input type="hidden" name="operacion" value="guardar" />
     <label> Categoria: </label>
