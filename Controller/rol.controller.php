@@ -1,5 +1,5 @@
 <?php
-include "../Model/rol.class.php";
+include_once "../Model/rol.class.php";
 //Capturamos la variable que viene del formulario 
 $operacion=$_POST["operacion"];
 

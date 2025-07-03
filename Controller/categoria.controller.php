@@ -1,5 +1,5 @@
 <?php
-include "../Model/categoria.class.php";
+include_once "../Model/categoria.class.php";
 $operacion = $_POST["operacion"];
 
 if (isset($operacion)) {

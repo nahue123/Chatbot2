@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="listarPreguntas.css">
 <?php
 require_once("../Model/pregunta.class.php");
 $pregunta = Pregunta::obtenerTodos();

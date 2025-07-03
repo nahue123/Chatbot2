@@ -1,5 +1,5 @@
 <?php
-include "../Model/pregunta.class.php";
+include_once "../Model/pregunta.class.php";
 
 if (isset($_POST['operacion'])) {
     $operacion = $_POST['operacion'];
@@ -35,6 +35,6 @@ if (isset($_POST['operacion'])) {
 
 } else {
     echo "<br>No se recibió ninguna operación.";
-    echo "<br><a href='../PreguntasCRUD/listarpreguntas.php'>Volver al listado</a>";
+    echo "<br><a href='../PreguntasCRUD/listarPreguntas.php'>Volver al listado</a>";
 }
 ?>

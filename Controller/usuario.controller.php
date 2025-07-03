@@ -1,5 +1,5 @@
 <?php
-include "../Model/usuario.class.php"; 
+include_once "../Model/usuario.class.php"; 
 
 if (isset($_POST['operacion'])) {
     $operacion = $_POST['operacion'];

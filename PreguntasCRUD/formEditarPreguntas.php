@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="formEditarPreguntas.css">
 <?php
-include "../Model/pregunta.class.php";
+include_once "../Model/pregunta.class.php";
 
 if(isset($_GET["id"])){
     $pregunta = Pregunta::obtenerPorId($_GET["id"]);
