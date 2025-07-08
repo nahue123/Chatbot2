@@ -1,0 +1,70 @@
+/* Título */
+.TituloEditar {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo general del formulario */
+form[name="formEditarRespuesta"] {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Etiquetas */
+form[name="formEditarRespuesta"] label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Campos de texto */
+form[name="formEditarRespuesta"] input[type="text"],
+form[name="formEditarRespuesta"] input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Botón de envío */
+form[name="formEditarRespuesta"] input[type="submit"] {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+form[name="formEditarRespuesta"] input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Link "Volver" */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

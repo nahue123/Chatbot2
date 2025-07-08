@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="formAltaRespuesta.css">
 <?php
 include_once '../Model/respuesta.class.php';
 include_once '../Model/pregunta.class.php';

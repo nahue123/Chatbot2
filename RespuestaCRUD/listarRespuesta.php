@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="listarRespuesta.css">
 <?php
 require_once("../Model/respuesta.class.php");
 $respuesta = Respuesta::obtenerTodas();

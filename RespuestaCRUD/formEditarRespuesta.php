@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="formEditarRespuesta.css">
 <?php
 include_once "../Model/respuesta.class.php";
 

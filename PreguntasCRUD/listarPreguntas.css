@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-/* Fuente base */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f7fa;
@@ -7,21 +6,16 @@ body {
     padding: 20px;
     color: #333;
 }
-
-/* Título principal */
 h2 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
     color: #2c3e50;
 }
-
-/* Contenedor del botón "Nueva Pregunta" */
 .boton-nuevo {
     text-align: center;
     margin-bottom: 20px;
 }
-
 .boton-nuevo a {
     background-color: #28a745;
     color: #fff;
@@ -31,12 +25,9 @@ h2 {
     font-weight: 600;
     transition: background-color 0.3s;
 }
-
 .boton-nuevo a:hover {
     background-color: #218838;
 }
-
-/* Estilo de tabla */
 table {
     width: 90%;
     margin: 0 auto;
@@ -46,30 +37,22 @@ table {
     border-radius: 8px;
     overflow: hidden;
 }
-
-/* Cabecera */
 table thead {
     background-color: #007BFF;
     color: white;
 }
-
 table th, table td {
     padding: 15px;
     text-align: left;
     font-size: 15px;
     border-bottom: 1px solid #eee;
 }
-
-/* Filas alternadas */
 table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-
 table tr:hover {
     background-color: #f1f1f1;
 }
-
-/* Acciones: Editar y Eliminar */
 td a {
     background-color: #ffc107;
     color: #212529;

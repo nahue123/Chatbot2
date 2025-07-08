@@ -14,18 +14,14 @@ if (isset($_POST['operacion'])) {
         $result = $pregunta->guardar();
 
     } else if ($operacion == "actualizar") {
-        $pregunta = new Pregunta(
-            $_POST['id'],
-            $_POST['pregunta'],
-            $_POST['categoria_id']
-        );
+        $pregunta = new Pregunta(  $_POST['id'], $_POST['pregunta'], $_POST['categoria_id']);
         $result = $pregunta->actualizar();
 
     } else if ($operacion == "eliminar") {
         $pregunta = new Pregunta($_POST['id']);
         $result = $pregunta->eliminar();
     }
-    
+
     if ($result) {
         echo "<br>La operación se ejecutó con éxito.";
     } else {

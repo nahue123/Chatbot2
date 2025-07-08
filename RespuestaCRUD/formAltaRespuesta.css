@@ -1,0 +1,44 @@
+form[name="formAltaRespuesta"] {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Etiquetas */
+form[name="formAltaRespuesta"] label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Campos de texto y select */
+form[name="formAltaRespuesta"] input[type="text"],
+form[name="formAltaRespuesta"] select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Botón de envío */
+form[name="formAltaRespuesta"] input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+form[name="formAltaRespuesta"] input[type="submit"]:hover {
+    background-color: #0056b3;
+}
