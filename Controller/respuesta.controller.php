@@ -22,7 +22,7 @@ if (isset($_POST['operacion'])) {
         $result = $respuesta->actualizar();
 
     } else if ($operacion == "eliminar") {
-        $respuesta = new ($_POST['id']);
+        $respuesta = new Respuesta($_POST['id']);
         $result = $respuesta->eliminar();
     }
     
@@ -31,10 +31,10 @@ if (isset($_POST['operacion'])) {
     } else {
         echo "<br>La operación no se ejecutó con éxito.";
     }
-    echo "<br><a href='../RespuestasCRUD/listarRespuesta.php'>Volver al listado</a>";
+    echo "<br><a href='../RespuestaCRUD/listarRespuesta.php'>Volver al listado</a>";
 
 } else {
     echo "<br>No se recibió ninguna operación.";
-    echo "<br><a href='../RespuestasCRUD/listarRespuesta.php'>Volver al listado</a>";
+    echo "<br><a href='../RespuestaCRUD/listarRespuesta.php'>Volver al listado</a>";
 }
 ?>

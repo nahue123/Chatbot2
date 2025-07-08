@@ -20,14 +20,13 @@ class Respuesta{
         return $stmt->execute([$this->respuesta, $this->pregunta_id]);
     }
 
-    public function obtenerTodas(){
+    public static function obtenerTodas(){
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM respuestas";
         $stmt = $conexion->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function obtenerPorld(){
+    public static function obtenerPorId($id){
         $conexion = Database::getInstance()->getConection();
         $sql = "SELECT * FROM respuestas WHERE id = ?";
         $stmt = $conexion->prepare($sql);

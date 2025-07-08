@@ -1,24 +1,25 @@
 <link rel="stylesheet" href="listarRespuesta.css">
 <?php
-require_once("../Model/respuesta.class.php");
-$respuesta = Respuesta::obtenerTodas();
+require_once '../Model/respuesta.class.php';
+$respuestas = Respuesta::obtenerTodas();
 ?>
 <h2 style="text-align: center;">Listado de Respuestas</h2>
+
 <div style="text-align: center; margin-bottom: 10px;">
-    <a href="formAltaPreguntas.php"> + Nueva Respuesta </a>
+    <a href="formAltaRespuesta.php"> + Nueva Respuesta </a>
 </div>
 <table>
     <tr>
         <th>ID</th>
         <th>Respuesta</th>
-        <th>Pregunta</th>
+        <th>Pregunta Id</th>
         <th>Acciones</th>
     </tr>
-    <?php foreach ($respuesta as $respuesta): ?>
+    <?php foreach ($respuestas as $respuesta): ?>
         <tr>
             <td><?= $respuesta['id'] ?></td> 
-            <td><?= $respuesta['respuesta'] ?></td> 
-            <td><?= $respuesta['pregunta_id'] ?></td> 
+            <td><?= $respuesta['respuesta'] ?></td>
+            <td><?= $respuesta['pregunta_id'] ?></td>  
             <td>
                 <a href="formEditarRespuesta.php?id=<?= $respuesta['id'] ?>">Editar</a>
                 <form action="../Controller/respuesta.controller.php" method="POST" style="display:inline;">

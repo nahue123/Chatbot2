@@ -1,4 +1,3 @@
-/* Título */
 .TituloEditar {
     text-align: center;
     font-size: 24px;
@@ -7,8 +6,6 @@
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
 }
-
-/* Estilo general del formulario */
 form[name="formEditarRespuesta"] {
     max-width: 400px;
     margin: 0 auto;
@@ -18,16 +15,12 @@ form[name="formEditarRespuesta"] {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
 }
-
-/* Etiquetas */
 form[name="formEditarRespuesta"] label {
     display: block;
     margin-bottom: 6px;
     font-weight: bold;
     color: #444;
 }
-
-/* Campos de texto */
 form[name="formEditarRespuesta"] input[type="text"],
 form[name="formEditarRespuesta"] input[type="number"] {
     width: 100%;
@@ -37,8 +30,6 @@ form[name="formEditarRespuesta"] input[type="number"] {
     border-radius: 6px;
     font-size: 14px;
 }
-
-/* Botón de envío */
 form[name="formEditarRespuesta"] input[type="submit"] {
     width: 100%;
     background-color: #28a745;
@@ -50,12 +41,9 @@ form[name="formEditarRespuesta"] input[type="submit"] {
     font-size: 15px;
     transition: background-color 0.3s ease;
 }
-
 form[name="formEditarRespuesta"] input[type="submit"]:hover {
     background-color: #218838;
 }
-
-/* Link "Volver" */
 a {
     display: block;
     text-align: center;
@@ -64,7 +52,6 @@ a {
     text-decoration: none;
     font-size: 14px;
 }
-
 a:hover {
     text-decoration: underline;
 }
