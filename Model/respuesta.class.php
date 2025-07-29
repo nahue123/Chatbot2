@@ -14,6 +14,25 @@ class Respuesta{
         $this->conexion = Database::getInstance()->getConection();
     }
 
+    public function buscar($preguntaUsuario) {
+        $sql = "SELECT r.respuesta 
+                FROM preguntas p 
+                JOIN respuestas r ON p.id = r.pregunta_id 
+                WHERE p.pregunta LIKE ? 
+                LIMIT 1";
+
+        $stmt = $this->conexion->prepare($sql);
+        $likePregunta = "%" . $preguntaUsuario . "%";
+        $stmt->execute([$likePregunta]);
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultado) {
+            return $resultado['respuesta'];
+        } else {
+            return "Lo siento, no encontré una respuesta para eso.";
+        }
+    }
+
     public function guardar(){
         $sql = "INSERT INTO respuestas (respuesta, pregunta_id) VALUES (?, ?)";
         $stmt = $this->conexion->prepare($sql);
