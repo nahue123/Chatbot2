@@ -1,113 +1,132 @@
-body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #eef2f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    background-color: #ffffff;
-    width: 650px;
-    height: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 1px solid #d0d8e4;
-}
-
-header {
-    background-color: #0d6efd;
-    color: #fff;
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #f2f6fa, #e3edf8);
+    color: #2a2a2a;
+    line-height: 1.6;
     text-align: center;
-    padding: 14px;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    animation: fadeIn 1s ease-in;
 }
 
-.chat-box {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: #f9fafc;
+/* ANIMACIONES */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Mensajes del usuario */
-.message-user {
-    align-self: flex-end;
-    background: linear-gradient(to right, #0d6efd, #4e9eff);
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 14px;
-    max-width: 70%;
-    font-size: 14px;
-    line-height: 1.4;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mensajes del bot */
-.message-bot {
-    align-self: flex-start;
-    background-color: #f1f3f6;
-    color: #2d2d2d;
-    padding: 12px 16px;
-    border-radius: 14px;
-    max-width: 80%;
-    font-size: 14px;
-    line-height: 1.4;
-    border-left: 4px solid #0d6efd;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-/* Input y botón */
-form {
-    display: flex;
-    border-top: 1px solid #d0d8e4;
-    background-color: #fff;
+/* HEADER */
+header {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 50px 20px;
 }
 
-input[type="text"] {
-    flex: 1;
-    padding: 14px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    background-color: #f6f6f6;
-    border-right: 1px solid #ddd;
+header h1 {
+    font-size: 3em;
+    font-weight: 800;
+    color: #1f3b4d;
+    margin-bottom: 10px;
 }
 
-input[type="text"]:focus {
-    background-color: #fff;
+header p {
+    font-size: 1.3em;
+    font-weight: 400;
+    color: #517e9e;
 }
 
-button {
-    background-color: #0d6efd;
+/* MAIN */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 50px 30px;
+}
+
+main h2 {
+    font-size: 2.8em;
+    color: #3d5670;
+    margin-bottom: 25px;
+}
+
+main p {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+main img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 8px solid #6fb1fc;
+    margin-top: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+}
+
+main img:hover {
+    transform: scale(1.08);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #3d5670, #1f3b4d);
     color: white;
-    border: none;
-    padding: 14px 20px;
-    cursor: pointer;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 2s ease;
+}
+
+footer div {
+    margin: 15px 0;
+}
+
+footer img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: rotate(4deg) scale(1.05);
+}
+
+footer p {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin: 5px;
+}
+
+/* Texto Enviado */
+.TextoEnviado {
+    color: white;
+    display: flex;
+    justify-content: end;
+    text-align: end;
+    background: #6a4c9c;
+    border-radius: 10px;
+    padding: 8px 10px;
     font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #094db3;
-}
-
-/* Scroll */
-.chat-box::-webkit-scrollbar {
-    width: 6px;
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 3px;
+    word-break: break-word;
 }
