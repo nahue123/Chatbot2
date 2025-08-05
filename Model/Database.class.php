@@ -3,7 +3,7 @@
 class Database {
     private static $instancia = null;
 
-    private $nombre = "Chatbot2";
+    private $nombre = "chatbot_2";
     private $servidor = "localhost";
     private $usuario = "root";
     private $clave = "";
