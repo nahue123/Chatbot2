@@ -35,5 +35,27 @@ class Conversacion {
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public static function guardarConversacion($pregunta, $respuesta) {
+        $conexion = Database::getInstance()->getConection();
+        $sql = "INSERT INTO conversaciones (pregunta_usuario, respuesta_bot, fecha_hora) VALUES (?, ?, NOW())";
+        $stmt = $conexion->prepare($sql);
+        return $stmt->execute([$pregunta, $respuesta]);
+    }
+    public function buscarRespuesta($preguntaUsuario) {
+        $sql = "SELECT r.respuesta 
+                FROM preguntas p 
+                JOIN respuestas r ON p.id = r.pregunta_id 
+                WHERE LOWER(p.pregunta) LIKE LOWER(?) 
+                LIMIT 1";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute(['%' . $preguntaUsuario . '%']);
+        $fila = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+        if ($fila) {
+            return $fila['respuesta'];
+        } else {
+            return "Lo siento, no entiendo tu pregunta.";
+        }
+    }
 }
 ?>
