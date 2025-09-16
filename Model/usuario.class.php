@@ -86,15 +86,23 @@ class Usuario{
             $this->id
         ]);
     }
-    public static function verificarLogin($email, $password) {
-        $usuario = self::obtenerPorEmail($email);
-        if ($usuario) {
-            if (password_verify($password, $usuario->password)) {
-                return $usuario; 
-            }
+    
+    // Método para validar el login
+    public function validarLogin($email, $password) {
+    $stmt = $this->db->prepare("SELECT * FROM usuarios WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        // Obtenemos los datos del usuario
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Verificamos si la contraseña coincide
+        if (password_verify($password, $usuario['password'])) {
+            return true; // Login exitoso
         }
-        return null; 
     }
+
     // Getters
     public function getId() {
         return $this->id;
