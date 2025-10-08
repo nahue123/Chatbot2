@@ -1,7 +1,7 @@
 <?php
 Include_once "database.class.php";
 
-class Usuario{
+class usuarios{
     private $id;
     private $nombre;
     private $email;
@@ -87,9 +87,9 @@ class Usuario{
         ]);
     }
     
-    // Método para validar el login
-    public function validarLogin($email, $password) {
-    $stmt = $this->db->prepare("SELECT * FROM usuarios WHERE email = :email");
+    public static function validarLogin($email, $password) {
+    $conexion = Database::getInstance()->getConection();
+    $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
@@ -102,6 +102,9 @@ class Usuario{
             return true; // Login exitoso
         }
     }
+    return false; // Login fallido
+    }
+
 
     // Getters
     public function getId() {

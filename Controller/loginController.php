@@ -1,19 +1,25 @@
 <?php
-// loginController.php
+session_start();
 
-require_once 'Model/Usuario.php';
+// Ejemplo de credenciales válidas
+$email_valido = "Admin@gmail.com";
+$pass_valida  = "Admin";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+// Verifico que se enviaron datos por POST
+if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $usuario = new Usuario();
-    $validacion = $usuario->validarLogin($email, $password);
+    if ($email === $email_valido && $password === $pass_valida) {
+        $_SESSION['usuario'] = $email;
 
-    if ($validacion) {
-        header("Location: dashboard.php");
+        // Redirigir al index.php (chat)
+        header("Location: ../Index.php");
+        exit();
     } else {
-        echo "Credenciales incorrectas.";
+        echo "Correo o contraseña incorrectos.";
     }
+} else {
+    echo "No se enviaron los datos correctamente.";
 }
 ?>
